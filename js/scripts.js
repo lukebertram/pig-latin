@@ -1,15 +1,31 @@
 //back-end business time
-var vowels = ['a','e','i','o','u']
-var isVowel = function(letter){
+var vowels = ['A','E','I','O','U']
 
-  return true;
+//returns true if letter is a vowel
+var isVowel = function(letter){
+  letter = letter.toUpperCase()
+  bool = false;
+  for (var i = 0; i < vowels.length; i++) {
+    if (vowels[i] === letter){
+      bool = true;
+    }
+  }
+  return bool;
 };
 
+//returns true if character is a letter
+var isLetter = function(character){
+  return character.length === 1 && character.match(/[a-z]/i);
+};
+
+//returns a string translated into pig latin
 var latinize = function(input){
   var translated;
-  var firstLetter = input.charAt(0);
-
-  if (isVowel(firstLetter)){
+  var firstChar = input.charAt(0);
+  debugger
+  if (!isLetter(firstChar)){
+    translated = input;
+  } else if (isVowel(firstChar)){
     translated = input.concat("way");
   }
   return translated;
