@@ -30,13 +30,13 @@
  * Input: yurt
  * Output: urtyay
 
+* Translates entire sentences, applying the above rules to individual words.
+ * Input: "the quick brown fox jumped over the lazy dog"
+ * Output: "ethay ickquay ownbray oxfay umpedjay overway ethay azylay ogday."
+
 * Apply previous rules to words starting with uppercase letters, outputting a pig latin word with an uppercased first letter.
  * Input: Hammer
  * Output: Ammerhay
-
-* Translates entire sentences, applying the above rules to individual words.
- * Input: "The quick brown fox jumped over the lazy dog."
- * Output: "Ethay ickquay ownbray oxfay umpedjay overway ethay azylay ogday."
 
 ## Description
 
