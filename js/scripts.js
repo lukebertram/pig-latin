@@ -1,6 +1,16 @@
 //back-end business time
 var vowels = ['A','E','I','O','U']
 
+//returns the index of the first vowel in a string that begins with a consonant
+var firstVowel = function(string){
+  var firstVowelIndex;
+  var splitUp = string.split("");
+  for (var i = 0; i < splitUp.length; i++) {
+    if (isVowel(splitUp[i])) {
+      return i;
+    }
+  }
+}
 //returns true if letter is a vowel
 var isVowel = function(letter){
   letter = letter.toUpperCase()
@@ -27,6 +37,10 @@ var latinize = function(input){
     translated = input;
   } else if (isVowel(firstChar)){
     translated = input.concat("way");
+  } else {
+    var vowelIndex = firstVowel(input);
+    var prefix = input.slice(0,vowelIndex).concat("ay");
+    translated = input.slice(vowelIndex, input.length).concat(prefix);
   }
   return translated;
 };
